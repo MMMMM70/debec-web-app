@@ -1,0 +1,34 @@
+package net.su.app.appPush.valueObject;
+
+public class AppPushValueObject {
+	private String regId; //기기 토큰값
+	private String sendTlt; //제목
+	private String sendMsg; //내용
+	private String type; //푸시 타입
+	
+	public String getRegId() {
+		return regId;
+	}
+	public void setRegId(String regId) {
+		this.regId = regId;
+	}
+	public String getSendTlt() {
+		return sendTlt;
+	}
+	public void setSendTlt(String sendTlt) {
+		this.sendTlt = sendTlt;
+	}
+	public String getSendMsg() {
+		return sendMsg;
+	}
+	public void setSendMsg(String sendMsg) {
+		this.sendMsg = sendMsg;
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+	
+}

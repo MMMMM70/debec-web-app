@@ -1,0 +1,11 @@
+<div align="center">
+	<font class="font-lg" face="휴먼편지체">오늘은 무엇을 먹고 싶으세요?</font><br>
+	<font class="font-lg" face="휴먼편지체"><b>랜덤박스</b></font>
+	<font class="font-lg" face="휴먼편지체">를 지금 오픈해보세요 !</font>
+</div>
+<div align="center" style="margin-top:30px">
+	<img src="../img/event_random_box.png" style="width:80%; height:80%"/>
+</div>
+<div align="center" style="margin-top:30px">
+	<a onclick="javascript:randomBoxDrawing()" class="ui-btn ui-btn-raised waves-effect waves-button waves-effect waves-button" style="width:60%">뽑 기</a>
+</div>

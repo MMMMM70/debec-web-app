@@ -1,0 +1,40 @@
+package net.su.app.appMain.dataAccessObject;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import net.su.app.appRecp.valueObject.AppRecpValueObject;
+import net.su.market.valueObject.DJNValueObject;
+import net.su.market.valueObject.EmpValueObject;
+
+import org.mybatis.spring.support.SqlSessionDaoSupport;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class AppMainDataAccessObject extends SqlSessionDaoSupport{
+
+	// 직원 목록 조회(대장남 투표)
+	public List<EmpValueObject> appSelectEmpList() throws Exception{
+		List<EmpValueObject> empList = getSqlSession().selectList("appMainMapper.appSelectEmpList");
+		return empList;
+	}
+	
+	// 대장남 투표
+	public void appDJNvoting(Map votingMap) throws Exception{
+		getSqlSession().insert("appMainMapper.appDJNvoting", votingMap);
+	}
+	
+	// 대장남 투표 권한
+	public int appSelectDJNVotingAthrty(int custmrSeq) throws Exception{
+		int thisMonthCount = getSqlSession().selectOne("appMainMapper.appDjnVotingAthrty", custmrSeq);
+		return thisMonthCount;
+	}
+	
+	// 랜덤 레시피 조회
+	public List<AppRecpValueObject> appSelectRecpList() throws Exception{
+		List<AppRecpValueObject> recpList = getSqlSession().selectList("appMainMapper.appSelectRecpList");
+		return recpList;
+	}
+	
+}

@@ -1,0 +1,76 @@
+<div>
+	<img src="../img/main_img.png" style="width:100%; height:150px"/>
+</div>
+<br><br>
+<div id="ordrRecrdCard" class="nd2-card" style="float:left; width:50%; margin:0px; padding:0px;">
+	<div style="padding-top:10px; padding-left:10px">
+		<font class="font-sm"><b>주문내역</b></font>
+		<img src="../img/big_small.png" style="width:20px; height:20px; float:right"><br>
+	</div>
+	<div id="ordrRecrdImg" align="center">
+		<img src="../img/apple.png" style="overflow:hidden; border-radius:50%; background-color:#bdbdbd;"/>
+	</div>
+</div>
+<div id="cartCard" class="nd2-card" style="float:left; width:50%; margin:0px; padding:0px;">
+	<div style="padding-top:10px; padding-left:10px">
+		<font class="font-sm"><b>장바구니</b></font>
+		<img src="../img/big_small.png" style="width:20px; height:20px; float:right"><br>
+	</div>
+	<div id="cartCardImg" align="center">
+		<img src="../img/apple.png" style="overflow:hidden; border-radius:50%; background-color:#bdbdbd;"/>
+	</div>
+</div>
+<div id="eventProdctCard" class="nd2-card" style="float:left; width:50%; margin:0px; padding:0px;">
+	<div style="padding-top:10px; padding-left:10px">
+		<font class="font-sm"><b>대백제</b></font>
+		<img src="../img/big_small.png" style="width:20px; height:20px; float:right"><br>
+	</div>
+	<div id="eventProdctImg" align="center">
+		<img src="../img/apple.png" style="overflow:hidden; border-radius:50%; background-color:#bdbdbd;"/>
+	</div>
+</div>
+<div id="freshFodCard" class="nd2-card" style="float:left; width:50%; margin:0px; padding:0px;">
+	<div style="padding-top:10px; padding-left:10px">
+		<font class="font-sm"><b>신선식품</b></font>
+		<img src="../img/big_small.png" style="width:20px; height:20px; float:right"><br>
+	</div>
+	<div id="freshFodImg" align="center">
+		<img src="../img/apple.png" style="overflow:hidden; border-radius:50%; background-color:#bdbdbd;"/>
+	</div>
+</div>
+<div id="hotdlCard" class="nd2-card" style="float:left; width:50%; margin:0px; padding:0px;">
+	<div style="padding-top:10px; padding-left:10px">
+		<font class="font-sm"><b>핫딜</b></font>
+		<img src="../img/big_small.png" style="width:20px; height:20px; float:right"><br>
+	</div>
+	<div id="hotdlImg" align="center">
+		<img src="../img/apple.png" style="overflow:hidden; border-radius:50%; background-color:#bdbdbd;"/>
+	</div>
+</div>
+<div id="packgCard" class="nd2-card" style="float:left; width:50%; margin:0px; padding:0px;">
+	<div style="padding-top:10px; padding-left:10px">
+		<font class="font-sm"><b>패키지</b></font>
+		<img src="../img/big_small.png" style="width:20px; height:20px; float:right"><br>
+	</div>
+	<div id="packgImg" align="center">
+		<img src="../img/apple.png" style="overflow:hidden; border-radius:50%; background-color:#bdbdbd;"/>
+	</div>
+</div>
+<div id="onlyYouCard" class="nd2-card" style="float:left; width:50%; margin:0px; padding:0px;">
+	<div style="padding-top:10px; padding-left:10px">
+		<font class="font-sm"><b>너만상</b></font>
+		<img src="../img/big_small.png" style="width:20px; height:20px; float:right"><br>
+	</div>
+	<div id="onlyYouImg" align="center">
+		<img src="../img/apple.png" style="overflow:hidden; border-radius:50%; background-color:#bdbdbd;"/>
+	</div>
+</div>
+<div id="dahamgaeCard" class="nd2-card" style="float:left; width:50%; margin:0px; padding:0px;">
+	<div style="padding-top:10px; padding-left:10px">
+		<font class="font-sm"><b>다함께</b></font>
+		<img src="../img/big_small.png" style="width:20px; height:20px; float:right"><br>
+	</div>
+	<div id="dahamgaeImg" align="center">
+		<img src="../img/apple.png" style="overflow:hidden; border-radius:50%; background-color:#bdbdbd;"/>
+	</div>
+</div>

@@ -1,0 +1,119 @@
+var empSeq;
+var empId;
+var empPw;
+var custmrSeq;
+var custmrId;
+var custmrPw;
+
+$(document).on('pageshow', function(event, data){ //"cusMainPage" 라는 page가 로딩됐을 때 실행이 되는 함수
+	if ($.mobile.activePage.attr('id') == "cusMainPage") {	
+		if(localStorage.getItem('custmrSeq')!=null){
+			custmrSeq = localStorage.getItem('custmrSeq');
+			custmrId = localStorage.getItem('custmrId');
+			custmrPw = localStorage.getItem('custmrPw');
+		}
+		else if(sessionStorage.getItem('custmrSeq')!=null){
+			custmrSeq = sessionStorage.getItem('custmrSeq');
+			custmrId = sessionStorage.getItem('custmrId');
+			custmrPw = sessionStorage.getItem('custmrPw');
+		}
+	}
+	if ($.mobile.activePage.attr('id') == "empMainPage") {	
+		if(localStorage.getItem('empSeq')!=null){
+			empSeq = localStorage.getItem('empSeq');
+			empId = localStorage.getItem('empId');
+			empPw = localStorage.getItem('empPw');
+		}
+		else if(sessionStorage.getItem('empSeq')!=null){
+			empSeq = sessionStorage.getItem('empSeq');
+			empId = sessionStorage.getItem('empId');
+			empPw = sessionStorage.getItem('empPw');
+		}
+	}
+});
+
+
+$(document).on('pageshow', function(event, data){
+	if ($.mobile.activePage.attr('id') == "cusMainPage") {	
+		$('#ordrRecrdCard').click(function(){
+//			$.mobile.changePage("");
+		});
+
+		$('#cartCard').click(function(){
+//			$.mobile.changePage("");
+		});
+
+		$('#eventProdctCard').click(function(){
+			$.mobile.changePage("../market/Debecjae.html");
+		});
+
+		$('#freshFodCard').click(function(){
+//			$.mobile.changePage("");
+		});
+
+		$('#hotdlCard').click(function(){
+//			$.mobile.changePage("");
+		});
+			
+		$('#packgCard').click(function(){
+//			$.mobile.changePage("");
+		});
+
+		$('#onlyYouCard').click(function(){
+			$.mobile.changePage("MarketCusOnlyYou.html");
+		});
+
+		$('#dahamgaeCard').click(function(){
+			$.mobile.changePage("MarketCusDahamgae.html");
+		});
+	}
+	else if ($.mobile.activePage.attr('id') == "empMainPage") {	
+		$('#ordrRecrdCard').click(function(){
+//			$.mobile.changePage("");
+		});
+
+		$('#cartCard').click(function(){
+//			$.mobile.changePage("");
+		});
+
+		$('#eventProdctCard').click(function(){
+			$.mobile.changePage("../market/Debecjae.html");
+		});
+
+		$('#freshFodCard').click(function(){
+//			$.mobile.changePage("");
+		});
+
+		$('#hotdlCard').click(function(){
+//			$.mobile.changePage("");
+		});
+			
+		$('#packgCard').click(function(){
+//			$.mobile.changePage("");
+		});
+
+		$('#onlyYouCard').click(function(){
+			$.mobile.changePage("../market/OnlyYou.html");
+		});
+
+		$('#dahamgaeCard').click(function(){
+			$.mobile.changePage("../market/Dahamgae.html");
+		});
+	}
+});
+
+function homeReturn(){
+	alert(empSeq + " : empSeq");
+	alert(custmrSeq + " : custmrSeq");
+	if(empSeq != undefined){
+		alert("직원화면");
+		$.mobile.changePage("../main/EmpMain.html");
+	}
+	else if(custmrSeq != undefined){
+		alert("고객화면");
+		$.mobile.changePage("../main/CusMain.html");
+	}
+}
+
+
+

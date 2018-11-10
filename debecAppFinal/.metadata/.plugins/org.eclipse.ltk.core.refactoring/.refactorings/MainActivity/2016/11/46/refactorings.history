@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 3 elements from project &apos;MainActivity&apos;&#x0D;&#x0A;- Original project: &apos;MainActivity&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     community.js.mine&#x0D;&#x0A;     community.js.r146&#x0D;&#x0A;     community.js.r149" description="Delete elements" element1="assets/www/js/community/community.js.mine" element2="assets/www/js/community/community.js.r146" element3="assets/www/js/community/community.js.r149" elements="0" flags="589830" id="org.eclipse.jdt.ui.delete" resources="3" stamp="1478425768586" subPackages="false" version="1.0"/>
+</session>

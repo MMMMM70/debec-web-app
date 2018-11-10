@@ -1,0 +1,48 @@
+<div data-role="page" id="CartPage" class="nd2-no-menu-swipe">
+	<!-- Header 시작 -->
+	<div data-role="header" data-position="fixed">
+		<a data-rel="back" class="ui-btn ui-btn-left"><img class="back-img" src="http://image.fileslink.com/367affb98f51b8/arrowhead-thin-outline-to-the-left.png"></a>
+		<h1 class="font-lg font-center">장바구니</h1>	
+	</div>
+	<!-- Header 끝 -->
+	<!-- content 시작 -->
+	<div role="main" id="CartMainPage" class="ui-content" data-inset="false">		
+		<div data-role="fieldcontain">
+			<fieldset data-role="controlgroup" style="width:50%">
+				<input type="checkbox" id="cartAllCheck" checked />
+					<label for="cartAllCheck" class="font-md">전체 선택	</label>
+			</fieldset>
+			<a onclick="allCartProdctDelete()" class="ui-btn ui-btn-inline ui-btn-right"><i class='zmdi zmdi-delete zmd-2x'></i></a>
+		</div>
+		<br><div class="font-md"><strong>일반 상품</strong></div>
+		<hr>
+		<div id="cartContent">
+		
+		</div>
+		
+		<div class="row">
+			<div class="col-xs-7">
+				<div class="box">
+					<br>
+					<b class="font-md">총 결제 예상 금액</b>
+				</div>
+			</div>
+			<div class="col-xs-5">
+				<div class="box">
+					<br>
+					<b id="predictSumPrice" class="font-md" style="float:right; color:red">0원</b>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<a onclick="cartOrdr()" class="ui-btn ui-btn-raised clr-primary font-btn"><b>주문하기</b></a>
+	</div>
+	<!-- content 끝 -->
+	<!-- Footer 시작 -->
+	<!-- data-tap-toggle="false"를 해서 토글 기능을 제거합니다. -->
+	<div data-role="footer" data-position="fixed" data-tap-toggle="false">
+		<!-- 하단 툴바 메뉴를 HTML로 바인딩합니다. -->
+		<nd2-include data-src="MyPageCusBottom.html"></nd2-include>
+	</div>	
+	<!-- Footer 끝 -->
+</div>

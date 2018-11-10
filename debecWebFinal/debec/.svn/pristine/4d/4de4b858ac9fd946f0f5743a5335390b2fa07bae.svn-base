@@ -1,0 +1,101 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 합쳐지고 최소화된 최신 CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+<!-- 부가적인 테마 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+<!-- JQuery 관련 파일들 -->
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src="/resources/js/push-js/pushNotfcatnRecpnt.js"></script>
+<script src="/resources/js/catgrChoice.js"></script>
+</head>
+<body>
+<div id="pushRecpntProdct" class="tab_content">
+	<form name="pushRecpntProdctPagingFrm" method="post">      
+		<input type="hidden" name="currentPageNo" value="${pushVo.currentPageNo}"> <!-- 현재 페이지 -->
+		<input type="hidden" name="searchWrd" value="${pushVo.searchWrd}">
+		<input type="hidden" name="searchCnd" value="${pushVo.searchCnd}">
+	</form>
+	<form name="pushDespRecrdFrm" method="POST">
+		<table class="table" style="width: 50%;">
+			<tr>
+	   			<td onclick="javascript:pushRecpnt()">전체</td>
+	   			<td onclick="javascript:pushRecpntProdctPopup()">상품</td>
+	   			<td class="active" onclick="javascript:pushRecpntCatgrPopup()">카테고리</td>
+	   			<td onclick="javascrirpt:pushRecpntPackgPopup()">패키지</td>
+	   			<td onclick="pushRecpntGropPurchsPopup()">공동구매</td>
+	   		</tr>
+		</table>
+	</form>
+	<form name="prodctSearchBoxFrm" >
+	<input type="hidden" name="currentPageNo" value="${ProdctValueObject.currentPageNo}"> <!-- 현재 페이지 -->
+	<input type="hidden" name="prodctSeq" value="0"> <!-- 중분류 목록 -->
+	<input type="hidden" name="topCatgrNme" value="${ProdctValueObject.topCatgrNme}"> <!-- 중분류 목록 -->
+	<input type="hidden" name="midCatgrNme" value="${ProdctValueObject.midCatgrNme}"> <!-- 소분류 목록-->
+	<input type="hidden" name="selectedTopCatgrNme" value="${ProdctValueObject.selectedTopCatgrNme}"> <!-- 선택된 대분류-->
+	<input type="hidden" name="selectedMidCatgrNme" value="${ProdctValueObject.selectedMidCatgrNme}"> <!-- 선택된 중분류 -->
+	<input type="hidden" name="selectedBotCatgrNme" value="${ProdctValueObject.selectedBotCatgrNme}"> <!-- 선택된 소분류-->
+	<input type="hidden" name="pageType" id="pageType" value="${pageType}"> <!-- 현재 리스트 타입 -->
+	<div class="container">
+		<table class="table table-bordered text-center">
+			<tr>
+				<td >
+				분류 선택
+				</td>
+				<td class="text-left">
+					<select id="topCatgrNme" onchange="javascript:catgrChoice('대',this.value)">
+						<option selected>대분류</option>
+						<c:forEach var="catgrList" items="${topCatgrArray}" varStatus="status">
+							<c:if test="${catgrList==ProdctValueObject.selectedTopCatgrNme}">
+								<option selected>${catgrList}</option>
+							</c:if>
+							<c:if test="${catgrList!=ProdctValueObject.selectedTopCatgrNme}">
+								<option>${catgrList}</option>
+							</c:if>
+						</c:forEach>
+					</select>
+					<select id="midCatgrNme" onchange="javascript:catgrChoice('중',this.value)">
+						<option selected>중분류</option>
+						<c:forEach var="catgrList" items="${midCatgrArray}" varStatus="status">
+							<c:if test="${catgrList==ProdctValueObject.selectedMidCatgrNme}">
+								<option selected>${catgrList}</option>
+							</c:if>
+							<c:if test="${catgrList!=ProdctValueObject.selectedMidCatgrNme}">
+								<option>${catgrList}</option>
+							</c:if>
+						</c:forEach>
+					</select>
+					<select name="botCatgrNme" id="botCatgrNme" name="prodctSechOption">
+						<option selected>소분류</option>
+						<c:forEach var="catgrList" items="${botCatgrArray}" varStatus="status">
+							<c:if test="${catgrList==ProdctValueObject.selectedBotCatgrNme}">
+								<option selected>${catgrList}</option>
+							</c:if>
+							<c:if test="${catgrList!=ProdctValueObject.selectedBotCatgrNme}">
+								<option>${catgrList}</option>
+							</c:if>
+						</c:forEach>
+					</select>
+				</td>
+			</tr>
+		</table>
+		<div class="container text-center">
+			<input class="btn btn-default" type="button" value="검색" onclick="javascript:prodctSearch()">
+		</div> 
+	</div>
+</form>
+</div>
+</body>
+</html>

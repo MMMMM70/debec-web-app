@@ -1,0 +1,145 @@
+package net.su.app.appRecp.dataAccessObject;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import net.su.app.appRecp.valueObject.AppRecpValueObject;
+import net.su.logger.Logger;
+import net.su.prodct.valueObject.ProdctValueObject;
+
+import org.mybatis.spring.support.SqlSessionDaoSupport;
+import org.springframework.stereotype.Repository;
+@Repository
+public class AppRecpDataAccessObject extends SqlSessionDaoSupport{
+	
+	/**
+	    * 판매 상품 리스트를 조회하는 메서드다..
+	    *
+	    * @param   ProdctValueObject
+	    * @return  List<ProdctValueObject>
+	    * @exception  Exception
+	    */
+	public List<AppRecpValueObject> newestRecpList(AppRecpValueObject appRecpValueObject) throws Exception{
+		Logger.info(null);
+		
+		List<AppRecpValueObject> recpList = getSqlSession().selectList("recpMapper.recpList", appRecpValueObject);
+		return recpList;
+	}
+
+	public void recpLikeInsert(AppRecpValueObject appRecpValueObject) throws Exception
+	{
+		Logger.info(null);
+		getSqlSession().insert("recpMapper.recpLikeInsert", appRecpValueObject);
+	}
+	public void recpLikeDelete(AppRecpValueObject appRecpValueObject) throws Exception
+	{
+		Logger.info(null);
+		getSqlSession().delete("recpMapper.recpLikeDelete", appRecpValueObject);
+	}
+	
+	public AppRecpValueObject recpRead(AppRecpValueObject appRecpValueObject) throws Exception
+	{
+		Logger.info(null);
+		appRecpValueObject = getSqlSession().selectOne("recpMapper.recpRead", appRecpValueObject);
+		return appRecpValueObject;
+	}
+	public void recpReplyInsert(AppRecpValueObject appRecpValueObject) throws Exception
+	{
+		Logger.info(null);
+		getSqlSession().insert("recpMapper.recpReplyInsert", appRecpValueObject);
+	}
+
+	public List<AppRecpValueObject> recpProdctList(AppRecpValueObject appRecpValueObject) throws Exception
+	{
+		List<AppRecpValueObject> recpProdctList = getSqlSession().selectList("recpMapper.recpProdctList", appRecpValueObject);
+				
+		return recpProdctList;
+	}
+	
+	public List<AppRecpValueObject> recpReplyList(AppRecpValueObject appRecpValueObject) throws Exception
+	{
+		Logger.info(null);
+		List<AppRecpValueObject> recpReplyList = getSqlSession().selectList("recpMapper.recpReplyList", appRecpValueObject);
+		
+		return recpReplyList;
+	}
+
+	public List<AppRecpValueObject> appRecpProdctSearch(String recpSechText) throws Exception{
+		List<AppRecpValueObject> appRecpProdctSearch = getSqlSession().selectList("recpMapper.appRecpProdctSearch", recpSechText);
+		return appRecpProdctSearch;
+	}
+
+	public List<AppRecpValueObject> appRecpProdctList(long[] recpProdct) throws Exception{
+		List<AppRecpValueObject> appRecpProdctList = null;
+		if(recpProdct[0]!=0)
+		{
+			Map<String, Object> map = new HashMap<String, Object>();
+			map.put("recpProdct",recpProdct);
+			appRecpProdctList = getSqlSession().selectList("recpMapper.appRecpProdctList", map);
+		}
+		return appRecpProdctList;
+	}
+	public int appRecpInsert(AppRecpValueObject appRecpValueObject, long[] recpProdct)throws Exception
+	{
+		getSqlSession().insert("recpMapper.appRecpInsert", appRecpValueObject);
+		int recpSeq = getSqlSession().selectOne("recpMapper.appRecpMaxSeq");
+		appRecpValueObject.setRecpSeq(recpSeq);
+		if(recpProdct[0] != 0)
+		{
+			for(int i = 0 ; i < recpProdct.length ; i++)
+			{
+				appRecpValueObject.setProdctSeq(recpProdct[i]);
+				System.out.println(appRecpValueObject.getProdctSeq()+"+++++++++++++++++");
+				getSqlSession().insert("recpMapper.appRecpProdctInsert", appRecpValueObject);
+			}
+		}
+		recpSeq = getSqlSession().selectOne("recpMapper.appRecpMaxSeq");
+		
+		return recpSeq;
+	}
+	public void appRecpImgSrcUpdate(AppRecpValueObject appRecpValueObject)throws Exception
+	{
+		getSqlSession().update("recpMapper.appRecpImgSrcUpdate", appRecpValueObject);
+	}
+	public void appRecpDelete(AppRecpValueObject appRecpValueObject)throws Exception
+	{
+		getSqlSession().delete("recpMapper.appRecpDelete", appRecpValueObject);
+		getSqlSession().delete("recpMapper.appRecpLikeDelete", appRecpValueObject);
+		getSqlSession().delete("recpMapper.appRecpProdctDelete", appRecpValueObject);
+		getSqlSession().delete("recpMapper.appRecpReplyDelete", appRecpValueObject);
+	}
+	public void appRecpUpdate(AppRecpValueObject appRecpValueObject, long[] recpProdct)throws Exception
+	{
+		getSqlSession().insert("recpMapper.appRecpUpdate", appRecpValueObject);
+	
+		
+		getSqlSession().delete("recpMapper.appRecpProdctDelete", appRecpValueObject);
+		
+		if(recpProdct[0] != 0)
+		{
+
+			for(int i = 0 ; i < recpProdct.length ; i++)
+			{
+				appRecpValueObject.setProdctSeq(recpProdct[i]);
+				System.out.println(appRecpValueObject.getProdctSeq()+"+++++++++++++++++");
+				getSqlSession().insert("recpMapper.appRecpProdctInsert", appRecpValueObject);
+			}
+		}
+	}
+	public void appRecpProdctCartInsert(int memSeq, long[] prodctSeqArray) throws Exception
+	{
+		for(int i = 0 ; i < prodctSeqArray.length ; i++)
+		{
+			AppRecpValueObject appRecpValueObject = new AppRecpValueObject();
+			
+			appRecpValueObject.setMemSeq(memSeq);
+			appRecpValueObject.setProdctSeq(prodctSeqArray[i]);
+			int check = getSqlSession().selectOne("recpMapper.appRecpProdctCartCheck", appRecpValueObject);
+			if(check == 0)
+			{
+				getSqlSession().insert("recpMapper.appRecpProdctCartInsert", appRecpValueObject);
+			}
+		}
+	}
+}

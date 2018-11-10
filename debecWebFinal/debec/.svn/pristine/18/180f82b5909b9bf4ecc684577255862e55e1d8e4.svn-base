@@ -1,0 +1,86 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<meta>
+	<title>템플릿 등록</title>
+	<!-- 합쳐지고 최소화된 최신 CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	
+	<!-- 부가적인 테마 -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+	
+	<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	
+	<!-- JQuery 관련 파일들 -->
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+	<script type="text/javascript">
+    	function pushNotfcatnTempltInsert(){
+			var fordata = $("#templtInsert").serialize() ;
+			alert("템플릿");
+			$.ajax({
+	            type: "POST",
+	            url: "/TempltInsert.do",
+	            data: fordata,
+	            success: function(){//이페이지에서 중복체크를 한다
+	            	alert("테스트");
+	                opener.parent.location.reload();
+	            	self.close();
+	            },
+	             error:function(xhr,status,error)
+	             { //ajax 오류인경우
+	                alert("$");
+	                alert("error\nxhr : " + xhr + ", status : " + status + ", error : " + error);       
+	             }
+	            });
+		}
+		function cancle(){
+			window.close();
+		}
+    </script>
+   </head>
+   <body>
+	<div id="container">
+		<form name="templtInsertPopup" id="templtInsert" method="POST">
+			 <table style="width: 100%;">
+		 		<tr>
+		    		<td>
+		    			푸리알림 제목
+		    		</td>
+		    		<td>
+		    			<input type="text" name="titl" class="form-control" >
+		    		</td>
+		    	</tr>
+		    	<tr>
+		    		<td>
+		    			푸시팝업/상태창
+		    		</td>
+		    	</tr>
+		    	<tr>
+		    		<td>
+		    			Headline
+		    		</td>
+		    		<td>
+		    			<input type="text" name="hedln" class="form-control" >
+		    		</td>
+		    	</tr>
+		    	<tr>
+		    	</tr>
+		    	<tr>
+		    		<td colspan="2">
+			    		<textarea name="cnt" class="form-control" >
+			    		</textarea>
+		    		</td>
+		    	</tr>
+		    </table>
+	    </form>
+	    <div align="right">
+	    	<input type="button" value="등록" class="btn btn-primary" onclick="javascript:pushNotfcatnTempltInsert()">
+	    	<input type="button" value="취소" class="btn btn-primary" onclick="javascript:cancle()"> 
+	    </div>
+	</div>
+   </body>
+</html>

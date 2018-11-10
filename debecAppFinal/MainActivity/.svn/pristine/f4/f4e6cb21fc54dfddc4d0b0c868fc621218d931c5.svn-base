@@ -1,0 +1,107 @@
+//index.html 페이지의 탭 부분 리로딩하는 스크립트
+$(document).on("pageshow","#empMainPage",function(){
+	if(!(typeof(componentHandler) == 'undefined')){
+		componentHandler.upgradeAllRegistered();
+	}
+	empLeftPanelNme();
+});
+//배송목록 페이지의 탭 부분 리로딩하는 스크립트
+$(document).on("pageshow","#empShipngListPage",function(){
+	if(!(typeof(componentHandler) == 'undefined')){
+		componentHandler.upgradeAllRegistered();
+	}
+});
+//실시간주문목록 페이지의 탭 부분 리로딩하는 스크립트
+$(document).on("pageshow","#empRealTimeOrdrListPage",function(){
+	if(!(typeof(componentHandler) == 'undefined')){
+		componentHandler.upgradeAllRegistered();
+	}
+});
+//주문취소목록 페이지의 탭 부분 리로딩하는 스크립트
+$(document).on("pageshow","#empOrdrCancelListPage",function(){
+	if(!(typeof(componentHandler) == 'undefined')){
+		componentHandler.upgradeAllRegistered();
+	}
+});
+//커뮤니티 리스트 페이지의 탭 부분 리로딩하는 스크립트
+$(document).on("pageshow","#communityListPage",function(){
+	if(!(typeof(componentHandler) == 'undefined')){
+		componentHandler.upgradeAllRegistered();
+	}
+});
+//다함께 페이지의 탭 부분 리로딩하는 스크립트
+$(document).on("pageshow","#dahamgaePage",function(){
+	if(!(typeof(componentHandler) == 'undefined')){
+		componentHandler.upgradeAllRegistered();
+	}
+});
+//다함께 상세 페이지의 탭 부분 리로딩하는 스크립트
+$(document).on("pageshow","#dahamgaeReadPage",function(){
+	if(!(typeof(componentHandler) == 'undefined')){
+		componentHandler.upgradeAllRegistered();
+	}
+});
+//대백제 페이지의 탭 부분 리로딩하는 스크립트
+$(document).on("pageshow","#debecjaePage",function(){
+	if(!(typeof(componentHandler) == 'undefined')){
+		componentHandler.upgradeAllRegistered();
+	}
+});
+//대백제 페이지의 탭 부분 리로딩하는 스크립트
+$(document).on("pageshow","#DebecFestivalPage",function(){
+	if(!(typeof(componentHandler) == 'undefined')){
+		componentHandler.upgradeAllRegistered();
+	}
+});
+//너만상 페이지의 탭 부분 리로딩하는 스크립트
+$(document).on("pageshow","#onlyYouPage",function(){
+	if(!(typeof(componentHandler) == 'undefined')){
+		componentHandler.upgradeAllRegistered();
+	}
+});
+//대백초이스 리스트 페이지의 탭 부분 리로딩하는 스크립트
+$(document).on("pageshow","#debecChoiceMainPage",function(){
+	if(!(typeof(componentHandler) == 'undefined')){
+		componentHandler.upgradeAllRegistered();
+	}
+});
+//내 레시피 리스트 페이지의 탭 부분 리로딩하는 스크립트
+$(document).on("pageshow","#myRecpListPage",function(){
+	if(!(typeof(componentHandler) == 'undefined')){
+		componentHandler.upgradeAllRegistered();
+	}
+});
+//레시피 리스트 페이지의 탭 부분 리로딩하는 스크립트
+$(document).on("pageshow","#recpListPage",function(){
+	if(!(typeof(componentHandler) == 'undefined')){
+		componentHandler.upgradeAllRegistered();
+	}
+});
+//고객 메인 페이지의 탭 부분 리로딩하는 스크립트
+$(document).on("pageshow","#cusMainPage",function(){
+	if(!(typeof(componentHandler) == 'undefined')){
+		componentHandler.upgradeAllRegistered();
+	}
+	$("#bottomMenu").attr("href", "MyPageCusFrame.html")
+});
+
+
+
+//검색 상품 리스트에서 탭 부분 리로딩하는 스크립트
+$(document).on("pageshow","#SearchProdctListPage",function(){
+	if(!(typeof(componentHandler) == 'undefined')){
+		componentHandler.upgradeAllRegistered();
+	}
+});
+//고객 주문목록 페이지의 탭 부분 리로딩하는 스크립트
+$(document).on("pageshow","#cusOrdrListPage",function(){
+	if(!(typeof(componentHandler) == 'undefined')){
+		componentHandler.upgradeAllRegistered();
+	}
+});
+//고객 주문취소목록 페이지의 탭 부분 리로딩하는 스크립트
+$(document).on("pageshow","#cusOrdrCancelListPage",function(){
+	if(!(typeof(componentHandler) == 'undefined')){
+		componentHandler.upgradeAllRegistered();
+	}	
+});

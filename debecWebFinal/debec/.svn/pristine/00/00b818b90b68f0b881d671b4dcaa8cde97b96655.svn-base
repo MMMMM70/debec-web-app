@@ -1,0 +1,54 @@
+package net.su.end.service;
+
+/**
+ * 상품분석 관련 서비스임플입니다.
+ * 
+ * @see   net.su.end.service.ProdctAnalServiceImpl
+ * @version  1.0 
+ * @ author 김대현, 2016/09/07
+ */
+
+import java.util.List;
+
+import javax.annotation.Resource;
+
+import net.su.end.dataAccessObject.ProdctAnalDataAccessObject;
+import net.su.end.valueObject.ProdctAnalValueObject;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class ProdctAnalServiceImpl implements ProdctAnalService{
+
+	@Resource
+	private ProdctAnalDataAccessObject prodctAnalDao;
+	
+	/**
+	* 판매수량이 상위 top 10 상품을 조회하는 메서드입니다.
+	*
+	* @param   
+	* @return  List<ProdctAnalValueObject>
+	* @exception  예외처리 상황을 적어주세요
+	*/
+	public List<ProdctAnalValueObject> selectSelProdctQunt(ProdctAnalValueObject prodctAnalVo) throws Exception{
+		List<ProdctAnalValueObject> prodctSelQuntList = prodctAnalDao.selectSelProdctQunt(prodctAnalVo);
+		return prodctSelQuntList;
+	}
+	
+	/**
+	* 판매금액합계가 상위 top 10 상품을 조회하는 메서드입니다.
+	*
+	* @param   
+	* @return  List<ProdctAnalValueObject>
+	* @exception  예외처리 상황을 적어주세요
+	*/
+	public List<ProdctAnalValueObject> selectSelProdctSum(ProdctAnalValueObject prodctAnalVo) throws Exception{
+		List<ProdctAnalValueObject> prodctSelSumList = prodctAnalDao.selectSelProdctSum(prodctAnalVo);
+		return prodctSelSumList;
+	}
+	
+//	public List<ProdctAnalValueObject> selectProdctRanking(ProdctAnalValueObject prodctAnalVo) throws Exception{
+//		List<ProdctAnalValueObject> prodctRankingList = prodctAnalDao.selectProdctRanking(prodctAnalVo);
+//		return prodctRankingList;
+//	}
+}

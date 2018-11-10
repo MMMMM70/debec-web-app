@@ -1,0 +1,73 @@
+package net.su.end.controller;
+
+import java.util.List;
+
+import javax.annotation.Resource;
+
+import net.su.end.service.ProdctAnalService;
+import net.su.end.valueObject.ProdctAnalValueObject;
+import net.su.end.valueObject.SalsValueObject;
+import net.su.prodct.service.ProdctService;
+import net.su.prodct.valueObject.ProdctValueObject;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+/**
+ * 상품분석 관련 컨트롤러입니다.
+ * 
+ * @see   net.su.end.controller.ProdctAnalController
+ * @version  1.0 
+ * @ author 김대현, 2016/09/07
+ */
+
+@Controller
+public class ProdctAnalController {
+
+	@Resource
+	private ProdctAnalService prodctAnalService;
+	@Resource
+	private ProdctService prodctService;
+	
+	/**
+	* 판매상품순위 화면을 보여주는 메서드입니다.
+	*
+	* @param   
+	* @return  String
+	* @exception  예외처리 상황을 적어주세요
+	*/
+	@RequestMapping(value="/SelProdctAnalList.do", method={RequestMethod.POST, RequestMethod.GET})
+	public String selectSelProdctAnal(ModelMap model, SalsValueObject salsValueObject, ProdctAnalValueObject prodctAnalVo) throws Exception{
+		System.out.println(prodctAnalVo.getBeginDatepicker()+"   데이트피커 시작일");
+		System.out.println(prodctAnalVo.getEndDatepicker()+"   데이트피커 종료일");
+		System.out.println(prodctAnalVo.getSelectedTopCatgrNme()+"   대분류");
+		System.out.println(prodctAnalVo.getSelectedMidCatgrNme()+"   중분류");
+		System.out.println(prodctAnalVo.getSelectedBotCatgrNme()+"   소분류");
+		System.out.println(prodctAnalVo.getProdctNmeSech()+"   상품명");
+		System.out.println(prodctAnalVo.getBeginSelPrice()+"   상품 판매 시작가격");
+		System.out.println(prodctAnalVo.getEndSelPrice()+"   상품 판매 종료가격");
+
+		
+		
+		List<ProdctAnalValueObject> prodctSelQuntList = prodctAnalService.selectSelProdctQunt(prodctAnalVo);	// TOP 10 상품 판매수량
+		List<ProdctAnalValueObject> prodctSelSumList = prodctAnalService.selectSelProdctSum(prodctAnalVo);		// TOP 10 상품 판매합계
+//		List<ProdctAnalValueObject> prodctRankingList = prodctAnalService.selectProdctRanking(prodctAnalVo);		// 판매 상품 순위 내역
+		
+		String[] topCatgrArray=prodctService.catgrList("기본",""); 									// 카테고리
+		String[] midCatgrArray=prodctService.catgrList("대",salsValueObject.getTopCatgrNme());		// 카테고리
+		String[] botCatgrArray=prodctService.catgrList("중",salsValueObject.getMidCatgrNme());		// 카테고리
+		
+		model.addAttribute("prodctSelQuntList", prodctSelQuntList);	// TOP 10 상품 판매수량
+		model.addAttribute("prodctSelSumList", prodctSelSumList);	// TOP 10 상품 판매합계
+		
+		model.addAttribute("topCatgrArray",topCatgrArray);	// 카테고리
+		model.addAttribute("midCatgrArray",midCatgrArray);	// 카테고리
+		model.addAttribute("botCatgrArray",botCatgrArray);	// 카테고리
+		model.addAttribute("prodctAnalVo", prodctAnalVo);
+		return "end/prodctAnal/SelProdctRanking";
+	}
+	
+
+}

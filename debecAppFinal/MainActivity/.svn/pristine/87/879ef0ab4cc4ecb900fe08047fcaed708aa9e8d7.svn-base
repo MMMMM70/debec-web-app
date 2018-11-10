@@ -1,0 +1,5 @@
+$(document).on('pageshow', '#dahamgaeReadPage', function () {
+	var percent = "80%";
+	var element = document.getElementById("test1");
+	element.style.width = percent;
+});

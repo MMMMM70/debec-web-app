@@ -1,0 +1,20 @@
+/**
+ * 
+ */
+//푸시알림 불러오기 템플릿 팝업
+function pushImprtTempltListPopup() {
+	//푸시 수신자 전체 고객 리스트 조회 팝업
+			var popUrl = "pushImprtTempltListPopup.do";
+			var popupName= "pushImprtTempltListPopup";
+			var width = 1200;
+			var height = 700;
+			var leftPosition = (screen.width/2) - (width/2);
+				leftPosition += window.screenLeft;//듀얼 모니터일때
+			var topPosition = (screen.height/2) - (height/2);
+			
+			var win = window.open(popUrl, popupName, "left="+leftPosition+", top="+topPosition+", toolbar=no, location=no, directories=no, scrollbars=no, resizable=no, width="+width+", height="+height);
+			
+			document.pushDespRecrdFrm.target = popupName;
+			document.pushDespRecrdFrm.action=popUrl;
+			document.pushDespRecrdFrm.submit();
+}

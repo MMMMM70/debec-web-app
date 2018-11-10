@@ -1,0 +1,166 @@
+package net.su.app.appRecp.service;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.List;
+import java.util.Map;
+
+import javax.annotation.Resource;
+import javax.servlet.ServletContext;
+
+import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
+
+import net.su.app.appRecp.dataAccessObject.AppRecpDataAccessObject;
+import net.su.app.appRecp.valueObject.AppRecpValueObject;
+import net.su.logger.Logger;
+import net.su.prodct.service.ProdctServiceImpl;
+import net.su.prodct.valueObject.ProdctValueObject;
+@Service 
+public class AppRecpServiceImpl implements AppRecpService {
+	@Resource
+	AppRecpDataAccessObject appRecpDataAccessObject;
+	
+	public List<AppRecpValueObject> recpList(AppRecpValueObject appRecpValueObject) throws Exception
+	{
+		Logger.info(null);
+		List<AppRecpValueObject> recpList =  appRecpDataAccessObject.newestRecpList(appRecpValueObject);
+
+		return recpList;
+	}
+	public void recpLikeProcessing(AppRecpValueObject appRecpValueObject) throws Exception
+	{
+		Logger.info(null);
+		if(appRecpValueObject.getLikeState()==0)
+		appRecpDataAccessObject.recpLikeInsert(appRecpValueObject);
+		else if(appRecpValueObject.getLikeState()==1)
+		appRecpDataAccessObject.recpLikeDelete(appRecpValueObject);
+	}
+
+	public AppRecpValueObject recpRead(AppRecpValueObject appRecpValueObject) throws Exception
+	{
+		Logger.info(null);
+		appRecpValueObject = appRecpDataAccessObject.recpRead(appRecpValueObject);
+		return appRecpValueObject;
+	}
+	public void recpReplyInsert(AppRecpValueObject appRecpValueObject) throws Exception
+	{
+		Logger.info(null);
+		appRecpDataAccessObject.recpReplyInsert(appRecpValueObject);
+		
+	}
+	public List<AppRecpValueObject> recpProdctList(AppRecpValueObject appRecpValueObject) throws Exception
+	{
+		List<AppRecpValueObject> recpProdctList = appRecpDataAccessObject.recpProdctList(appRecpValueObject);
+				
+		return recpProdctList;
+	}
+	public List<AppRecpValueObject> recpReplyList(AppRecpValueObject appRecpValueObject) throws Exception
+	{
+		Logger.info(null);
+		List<AppRecpValueObject> recpReplyList = appRecpDataAccessObject.recpReplyList(appRecpValueObject);
+
+		return recpReplyList;
+	}
+
+	public List<AppRecpValueObject> appRecpProdctSearch(String recpSechText) throws Exception{
+		List<AppRecpValueObject> appRecpProdctSearch = appRecpDataAccessObject.appRecpProdctSearch(recpSechText);
+		return appRecpProdctSearch;
+	}
+	public List<AppRecpValueObject> appRecpProdctList(long[] recpProdct) throws Exception{
+		List<AppRecpValueObject> appRecpProdctList = appRecpDataAccessObject.appRecpProdctList(recpProdct);
+		return appRecpProdctList;
+	}
+	public String recpTempFileUpload(MultipartHttpServletRequest request, AppRecpValueObject appRecpValueObject) throws Exception
+	{
+		ProdctServiceImpl prodctServiceImpl = new ProdctServiceImpl();
+		Map<String, MultipartFile> files = request.getFileMap();
+		ServletContext context = request.getSession().getServletContext();
+		
+		int random = (int) (Math.random() * 100000000);
+		String dirCleaner = "";
+		String filePath ="";
+		String dirPath ="";
+		
+		CommonsMultipartFile getCmf = (CommonsMultipartFile) files.get("recpImgFile");
+		if(appRecpValueObject.getPageType()==0)
+		{
+			if(appRecpValueObject.getTempNum()!=0)
+			{
+				dirCleaner ="resources/image/recp/temp/"+appRecpValueObject.getTempNum()+"/";
+				
+				File fileDirCleaner = new File(context.getRealPath(dirCleaner));
+				prodctServiceImpl.directoryCleaner(fileDirCleaner);
+			}	
+			filePath ="resources/image/recp/temp/"+random+"/main.jpg";
+			dirPath ="resources/image/recp/temp/"+random+"/";
+			
+			prodctServiceImpl.selProdctImgSave(context.getRealPath(filePath), context.getRealPath(dirPath), getCmf);
+		}
+		if(appRecpValueObject.getPageType()==1)
+		{
+			dirCleaner ="resources/image/recp/temp/"+appRecpValueObject.getTempNum()+"/";	
+			filePath ="resources/image/recp/recpImg/"+appRecpValueObject.getRecpSeq()+"/main.jpg";
+			dirPath ="resources/image/recp/recpImg/"+appRecpValueObject.getRecpSeq();
+
+			appRecpValueObject.setRecpImg(filePath);
+
+			prodctServiceImpl.directoryCleaner(context.getRealPath(dirPath));
+			
+			File dirSaver = new File(context.getRealPath(dirPath));
+			dirSaver.mkdir();
+			
+			fileCopy(context.getRealPath(dirCleaner+"/main.jpg"), context.getRealPath(filePath));
+			appRecpDataAccessObject.appRecpImgSrcUpdate(appRecpValueObject);
+			
+			File fileDirCleaner = new File(context.getRealPath(dirCleaner));
+			prodctServiceImpl.directoryCleaner(fileDirCleaner);
+		}
+		
+		return random+"";
+	}
+
+	public int appRecpInsert(AppRecpValueObject appRecpValueObject, long[] recpProdct)throws Exception
+	{
+		int recpSeq = appRecpDataAccessObject.appRecpInsert(appRecpValueObject, recpProdct);
+		
+		return recpSeq;
+	}
+	public void fileCopy(String inFileName, String outFileName) {
+		try 
+		{
+		   FileInputStream fis = new FileInputStream(inFileName);
+		   FileOutputStream fos = new FileOutputStream(outFileName);
+
+		   int data = 0;
+		   while((data=fis.read())!=-1) {
+			   fos.write(data);
+		   }
+			fis.close();
+			fos.close();
+	   
+		} 
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void appRecpDelete(AppRecpValueObject appRecpValueObject)throws Exception
+	{
+		appRecpDataAccessObject.appRecpDelete(appRecpValueObject);
+	}
+
+	public void appRecpUpdate(AppRecpValueObject appRecpValueObject, long[] recpProdct)throws Exception
+	{
+		appRecpDataAccessObject.appRecpUpdate(appRecpValueObject, recpProdct);
+	}
+
+	public void appRecpProdctCartInsert(int memSeq, long[] prodctSeqArray) throws Exception
+	{
+		appRecpDataAccessObject.appRecpProdctCartInsert(memSeq, prodctSeqArray);
+	}
+}

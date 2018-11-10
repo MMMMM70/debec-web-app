@@ -1,0 +1,144 @@
+
+// 이미지 슬라이더
+//$(document).on('pageshow', "#cusMainPage", function (event, data) { //"cusMainPage" 라는 page가 로딩됐을 때 실행이 되는 함수
+	
+
+//$('#loginBtn').click(function(){
+//	alert("시작");
+//	var list = $('ul.album');
+//	var size = list.children().outerWidth();
+//	var len =  list.children().length;
+//	var speed = 2000;
+//	var timer = null;
+//	var auto = true;
+//	var cnt = 1;
+//	
+//	list.css('width',len*size);
+//	if(auto) timer = setInterval(autoSlide, speed);
+//	$('.bt-roll').children().bind({
+//		'click': function(){
+//			var idx = $('.bt-roll').children().index(this);
+//			cnt = idx;
+//			autoSlide();
+//			return false;
+//		}
+//	});		
+//	function autoSlide(){
+//		if(cnt>len-1){
+//			cnt = 0;
+//		}
+//		list.animate({'left': -(cnt*size)+'px' },'normal');
+//	
+//		var source2 = $('ul.bt-roll').children().find('img').attr('src').toString().replace('on.png','off.png');
+//		$('ul.bt-roll').children().find('img').attr('src',source2);
+//	
+//		var source = $('ul.bt-roll').children().find('img').attr('src').toString().replace('off.png','on.png');
+//		$('ul.bt-roll').children().eq(cnt).find('img').attr('src',source);
+//	
+//		cnt++;
+//	}
+//
+//});
+		
+	
+//	}
+//	else if ($.mobile.activePage.attr('id') == "empMainPage") {	
+//		list.css('width',len*size);
+//		if(auto) timer = setInterval(autoSlide, speed);
+//		
+//		$('.bt-roll').children().bind({
+//			'click': function(){
+//				var idx = $('.bt-roll').children().index(this);
+//				cnt = idx;
+//				autoSlide();
+//				return false;
+//			}
+//		});		
+//		function autoSlide(){
+//			if(cnt>len-1){
+//				cnt = 0;
+//			}
+//			list.animate({'left': -(cnt*size)+'px' },'normal');
+//		
+//			var source2 = $('ul.bt-roll').children().find('img').attr('src').replace('on.png','off.png');
+//			$('ul.bt-roll').children().find('img').attr('src',source2);
+//		
+//			var source = $('ul.bt-roll').children().find('img').attr('src').replace('off.png','on.png');
+//			$('ul.bt-roll').children().eq(cnt).find('img').attr('src',source);
+//		
+//			cnt++;
+//		}
+//	}
+//});
+
+$(document).on('pageshow', function(event, data){
+	if ($.mobile.activePage.attr('id') == "cusMainPage") {	
+		$('#ordrRecrdCard').click(function(){
+//			$.mobile.changePage("");
+		});
+
+		$('#cartCard').click(function(){
+//			$.mobile.changePage("");
+		});
+
+		$('#eventProdctCard').click(function(){
+			$.mobile.changePage("MarketDebecFestival.html");
+		});
+
+		$('#freshFodCard').click(function(){
+//			$.mobile.changePage("");
+		});
+
+		$('#hotdlCard').click(function(){
+//			$.mobile.changePage("");
+		});
+			
+		$('#packgCard').click(function(){
+//			$.mobile.changePage("");
+		});
+
+		$('#onlyYouCard').click(function(){
+			$.mobile.changePage("MarketOnlyYou.html");
+		});
+
+		$('#dahamgaeCard').click(function(){
+			$.mobile.changePage("MarketDahamgae.html");
+		});
+	}
+	else if ($.mobile.activePage.attr('id') == "empMainPage") {	
+		$('#ordrRecrdCard').click(function(){
+//			$.mobile.changePage("");
+		});
+
+		$('#cartCard').click(function(){
+//			$.mobile.changePage("");
+		});
+
+		$('#eventProdctCard').click(function(){
+			$.mobile.changePage("MarketDebecFestival.html");
+		});
+
+		$('#freshFodCard').click(function(){
+//			$.mobile.changePage("");
+		});
+
+		$('#hotdlCard').click(function(){
+//			$.mobile.changePage("");
+		});
+			
+		$('#packgCard').click(function(){
+//			$.mobile.changePage("");
+		});
+
+		$('#onlyYouCard').click(function(){
+			$.mobile.changePage("MarketOnlyYou.html");
+		});
+
+		$('#dahamgaeCard').click(function(){
+			$.mobile.changePage("MarketDahamgae.html");
+		});
+	}
+});
+
+
+

@@ -1,0 +1,87 @@
+<div data-role="page" id="recpListPage" class="nd2-no-menu-swipe">
+	<style>
+	ul{
+		border-top: 2px solid #8BC34A;
+		border-left: 1px solid #9E9E9E;
+		border-right: 1px solid #9E9E9E;			
+	}
+	li{
+		border-bottom: 1px solid #9E9E9E;
+	}
+	.ui-input-text:after{
+		width:88%;
+	}
+	.ui-input-text{
+		margin: 0 0 0 0;
+	}		
+	.ui-autocomplete
+	{  
+		margin-left: 2%;
+		margin-top:14%; 
+		width: 94%;
+		z-index: 2;
+		border:2px solid gray;
+		BORDER-COLLAPSE: collapse;
+	}  
+	.ui-menu-item 
+	{ 
+		border:0.1px solid gray;
+		height:30px;
+		padding-top: 1.5%;
+		padding-left: 5px;
+		background-color:white;
+	} 
+	</style>
+	<nd2-include data-src="MainCusPanelLeft.html"></nd2-include>		
+	<a href="#recpPanelRight" class="ui-btn ui-btn-right" ><i class="zmdi zmdi-apps zmd-fw"></i></a>
+	<!-- Header 시작 -->
+	<div data-role="header" data-position="fixed">
+		<a data-rel="back" class="ui-btn ui-btn-left"><img class="back-img" src="http://image.fileslink.com/367affb98f51b8/arrowhead-thin-outline-to-the-left.png"></a>
+		<h1 class="font-lg font-center" onclick="$.mobile.changePage('MainCusFrame.html')">레시피 목록</h1>			
+		<a href="#recpPanelRight" class="ui-btn ui-btn-right" ><i class="zmdi zmdi-apps zmd-fw"></i></a>
+		<div>
+			<nd2-include data-src="RecpSearchRecp.html"/>
+		</div>
+	</div>
+	
+	<div style="background-color:#BDBDBD; padding:3px " data-role="panel" id="recpPanelRight" 
+	         data-display="overlay" data-position="right" data-position-fixed="true" >
+	   <ul id="recpPanelRightList"-role="listview" data-inset="true" style="background-color:lightgray;">
+	      <li class="ui-field-contain" style="background-color:#F2F2F2">
+	       	    <a href="RecpCret.html">레시피등록하기</a>
+	       </li>
+	       <li>
+	       	    <a href="RecpMyRecpList.html">내 레시피</a>
+	       </li>
+	   </ul>      
+	</div>
+	<!-- Header 끝 -->				
+	<!-- content 시작 -->
+	<div role="main" class="ui-content" data-inset="false">
+		<!-- MDL 판넬 메뉴 -->
+		<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+			<div class="mdl-tabs__tab-bar">
+				<a href="#newestRecpCont" class="mdl-tabs__tab is-active">최신</a>
+				<a href="#popularRecpCont" class="mdl-tabs__tab">인기</a>
+				<a href="#likeRecpCont" class="mdl-tabs__tab">좋아요</a>
+			</div>
+			<!-- 첫번째 탭 -->
+			<div class="mdl-tabs__panel is-active" id="newestRecpCont">
+			</div>		
+			<!-- 두번째 탭 시작 -->
+			<div class="mdl-tabs__panel" id="popularRecpCont">
+			</div>
+			<!-- 세번째 탭 시작 -->
+			<div class="mdl-tabs__panel" id="likeRecpCont">
+			</div>
+		</div>
+		<!-- MDL 판넬 메뉴 -->
+	</div>
+	<!-- content 끝 -->
+	<!-- Footer 시작 -->
+	<div data-role="footer" data-position="fixed" data-tap-toggle="false">
+		<!-- 하단 툴바 메뉴를 HTML로 바인딩합니다. -->
+		<nd2-include data-src="MainBottom.html"></nd2-include>
+	</div>	
+	<!-- Footer 끝 -->
+</div>

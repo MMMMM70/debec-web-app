@@ -1,0 +1,26 @@
+//상품테이블 검색
+function clintListSearch() {
+	var formData = $("#clintSechFrm").serialize();
+	$.ajax({
+		type : "POST",
+		url : "/packgClintList.do",
+		data : formData,
+		success: function(msg) {
+			document.getElementById('clintTable').innerHTML = msg;	
+		}
+	});
+}
+
+//상품테이블 페이징
+function clintPaging(page) {
+	document.clintPagingFrm.currentPageNo.value = page;
+	var formData = $("#clintPagingFrm").serialize();
+	$.ajax({ 
+		type : "POST",
+		url : "/packgClintList.do",
+		data : formData,
+		success: function(msg) {
+			document.getElementById('clintTable').innerHTML = msg;	
+		}
+	});
+}

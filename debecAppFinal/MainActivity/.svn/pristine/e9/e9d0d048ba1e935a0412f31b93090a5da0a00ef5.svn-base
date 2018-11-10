@@ -1,0 +1,169 @@
+<div data-role="page" id="dahamgaeReadPage" style="background-color:#F3F3F3">
+	<nd2-include data-src="MainEmpPanelLeft.html"></nd2-include>
+	<nd2-include data-src="MainEmpPanelRight.html"></nd2-include>
+	<!-- Header 시작 -->
+	<div data-role="header" data-position="fixed">
+		<a href="#empLeftPanel" class="ui-btn ui-btn-left" ><i class="zmdi zmdi-dehaze zmd-fw"></i></a>
+		<h1 class="font-lg font-center" onclick="$.mobile.changePage('MainEmpFrame.html')">DEBEC</h1>		
+		<a href="#empRightPanel" class="ui-btn ui-btn-right" ><i class="zmdi zmdi-apps zmd-fw"></i></a>
+		<div>
+			<nd2-include data-src="MarketSearchMarket.html"/>
+		</div>
+		<div data-position="fixed" data-tap-toggle="false">
+			<nd2-include data-src="MarketEmpNavBarMarket.html"/>
+		</div>
+	</div>
+	<!-- Header 끝 -->
+	<div data-role="content">
+		<img src="../img/20140926181251737726.jpg" style="width:100%; height:300px;"/>
+	</div>
+	<div data-role="content">
+		<div class="row"><br />
+			<div class="col-xs-12">
+				<div class="progress">
+					<div align="center" class="one primary-color"><br><br>50</div> <div align="center" class="two danger-color"><br><br>100</div>
+					<div ID="test1" class="progress-bar" style="width: 0%;"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<hr/>
+	
+	<div data-role="content">
+		<div class="opt_em">
+			<!-- 옵션/사은품/추가구성 -->
+			<div class="bx_prd" id="_ssg_options_top">
+				<!-- 옵션상품 아닐때. 즉, 단품상품 일 때 -->
+				<div class="prd_amount" id="ssg_unit">
+					<a href="javascript:;" class="b_minus" onclick="fn_UnitDown(this);">빼기</a>
+					<span class="opa_area" id="ssg_qty">
+						<span class="opa_tx">1</span>
+						<span class="opa_select">
+							<label for="hs5">옵션명</label>
+							<select id="hs5" title="옵션명 선택" onchange="fn_UnitSelected($(this));">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+								<option value="11">11</option>
+								<option value="12">12</option>
+								<option value="13">13</option>
+								<option value="14">14</option>
+								<option value="15">15</option>
+								<option value="16">16</option>
+								<option value="17">17</option>
+								<option value="18">18</option>
+								<option value="19">19</option>
+								<option value="20">20</option>
+							</select>
+						</span>
+					</span>
+		 			<a href="javascript:;" class="sp_com b_plus" onclick="fn_UnitUp(this);">더하기</a>
+					<input type="hidden" name="qty" value="1">
+					<input type="hidden" name="price" value="4980">
+					<input type="hidden" name="itemId" value="1000005391528">
+					<input type="hidden" name="uitemId" value="00000">
+					<input type="hidden" name="salestrNo" value="2034">
+					<input type="hidden" name="salestrNm" value="성수점">
+				</div>
+				<!-- 옵션/사은품/추가구성 -->
+				<ul class="m_userinfo"></ul>
+		
+				<ul id="ssg_frebie" class="m_userinfo line_one">
+					</ul>
+		
+				<ul id="ssg_cmpt" class="m_userinfo line_one">
+					</ul>
+		
+				<ul class="m_userinfo line_one" id="ssg_counter"></ul>
+			</div>
+			<div class="bx_prd2">
+				<h4 class="m_mid_total">
+					<strong class="label">합계</strong>
+					<strong class="price"><em class="ssg_price" id="ssg_price">4,980</em><span class="ssg_tx">원</span></strong>
+				</h4>
+				<ul class="optin_lst"></ul>
+			</div>
+			<div class="cm_buy_btn">
+				<ul>
+					<li><a href="javascript:;" onclick="fn_SaveCart(this, 'cart');" class="btn_ty1 font-btn">장바구니</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<div data-role="content">
+		<div class="row">
+			<span>안내</span>
+		</div>
+		<hr/>
+		<div class="box">
+			<p>안내</p>
+			<p>안내</p>
+			<p>안내</p>
+		</div>
+	</div>
+	
+	<div data-role="content">
+		<div class="row">
+			<img src="../img/20140926181251737726.jpg" style="width:100%; height:300px;"/>
+		</div>
+	</div>
+	<div data-role="content">
+		<div class="row">
+			<img src="../img/20140926181251737726.jpg" style="width:100%; height:300px;"/>
+		</div>
+	</div>
+	<div data-role="content">
+		<div class="row">
+			<img src="../img/20140926181251737726.jpg" style="width:100%; height:300px;"/>
+		</div>
+	</div>
+	<div data-role="content">
+		<div class="row">
+			<img src="../img/20140926181251737726.jpg" style="width:100%; height:300px;"/>
+		</div>
+	</div>
+	
+	<div data-role="content" >
+		<p><b>이 상품과 같이 구매하면 좋은 상품</b></p>
+		<hr/>
+		<div class="row">
+			<div class="col-xs-4">
+				<img src="../img/20140926181251737726.jpg" style="width:100%;"/>
+				<p>
+					한입 아오리사과 4kg(24~27개)
+					2,540원
+				</p>
+			</div>
+			<div class="col-xs-4">
+				<img src="../img/20140926181251737726.jpg" style="width:100%;"/>
+				<p>
+					한입 아오리사과 4kg(24~27개)
+					2,540원
+				</p>
+			</div>
+			<div class="col-xs-4">
+				<img src="../img/20140926181251737726.jpg" style="width:100%;"/>
+				<p>
+					한입 아오리사과 4kg(24~27개)
+					2,540원
+				</p>
+			</div>
+		</div>
+	</div>
+	<!-- data-tap-toggle="false"를 해서 토글 기능을 제거합니다. -->
+	<div data-role="footer" data-position="fixed" data-tap-toggle="false">
+		<!-- 하단 툴바 메뉴를 HTML로 바인딩합니다. -->
+		<nd2-include data-src="MainEmpBottom.html"></nd2-include>
+	</div>		
+	<!-- Footer 끝 -->
+	</div>
+</body>
+</html>

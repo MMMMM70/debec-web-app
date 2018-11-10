@@ -1,0 +1,64 @@
+function insertProdct(){
+	var formData = $("#freshAdForm").serialize();
+	$.ajax({
+		type : "POST",
+		url : "/freshCreate.do",
+		data : formData,
+		success: function(msg) {
+			alert("등록이 완료되었습니다.");
+			$('#prodctSeq').val("");
+			$('#freshAdListImg').html("");
+			$('#prodctSeq2').html("");
+			$('#prodctNme').html("");
+			$('#selPric').html("");
+			$('#stat').val("판매중");
+		},
+		error:function(request,status,error){
+	        alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+		}
+	}); 
+}
+
+
+function cancelProdct(){
+    window.opener.location.reload();
+    self.close();
+}
+
+function closeIt(){
+    window.opener.$("#FadeIn").remove();
+    self.close();
+}
+
+//상품테이블 검색
+function prodctSech() {
+	var formData = $("#prodctSechFrm").serialize();
+	alert(formData);
+	$.ajax({
+		type : "POST",
+		url : "/freshAdList.do",
+		data : formData,
+		success: function(msg) {
+			alert(msg);
+			document.getElementById('prodctTable').innerHTML = msg;	
+			alert("@@@@@@@@@");
+		}
+	});
+}
+
+//상품테이블 페이징
+function prodctPaging(page) {
+	document.prodctPagingFrm.currentPageNo.value = page;
+	var formData = $("#prodctPagingFrm").serialize();
+	alert(formData);
+	$.ajax({
+		type : "POST",
+		url : "/freshAdList.do",
+		data : formData,
+		success: function(msg) {
+			alert(msg);
+			document.getElementById('prodctTable').innerHTML = msg;	
+			alert("@@@@@@@@@");
+		}
+	});
+}

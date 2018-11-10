@@ -1,0 +1,159 @@
+package net.su.end.valueObject;
+/**
+ * 상품분석  VO입니다.
+ * 
+ * @see   net.su.end.valueObject.ProdctAnalValueObject
+ * @version  1.0 
+ * @ author 김대현, 2016/09/07
+ */
+
+public class ProdctAnalValueObject {
+	// view 테이블
+	private String ordrDat;
+	private String topCatgrNme;
+	private String midCatgrNme;
+	private String botCatgrNme;
+	
+	// 카테고리
+	private String selectedTopCatgrNme="대분류";
+	private String selectedMidCatgrNme="중분류";
+	private String selectedBotCatgrNme="소분류";
+	private String catgrSize;
+	
+	// 출고 테이블
+	private int qunt = 0;			// 매출수량, 교환환불수량
+	private int instckPric;			// 입고가격
+	private int selPric;			// 판매가격
+	
+	// 상품 테이블
+	private String prodctNme;		// 제품명
+	private Long prodctSeq;			// 제품PK
+	
+	// 검색
+	private String btnDatSech;	// 일자 버튼 검색
+	private String beginDatepicker="";	// 기간 검색 (시작일)
+	private String endDatepicker="";	// 기간 검색(마지막일)
+	private String prodctNmeSech="";	// 상품명 검색
+	private int beginSelPrice=0;		// 상품 검색 시작가격
+	private int endSelPrice=0;		// 상품 검색 마지막가격
+	
+
+	
+	
+	public String getOrdrDat() {
+		return ordrDat;
+	}
+	public void setOrdrDat(String ordrDat) {
+		this.ordrDat = ordrDat;
+	}
+	public String getTopCatgrNme() {
+		return topCatgrNme;
+	}
+	public void setTopCatgrNme(String topCatgrNme) {
+		this.topCatgrNme = topCatgrNme;
+	}
+	public String getMidCatgrNme() {
+		return midCatgrNme;
+	}
+	public void setMidCatgrNme(String midCatgrNme) {
+		this.midCatgrNme = midCatgrNme;
+	}
+	public String getBotCatgrNme() {
+		return botCatgrNme;
+	}
+	public void setBotCatgrNme(String botCatgrNme) {
+		this.botCatgrNme = botCatgrNme;
+	}
+	public String getProdctNmeSech() {
+		return prodctNmeSech;
+	}
+	public void setProdctNmeSech(String prodctNmeSech) {
+		this.prodctNmeSech = prodctNmeSech;
+	}
+	public int getBeginSelPrice() {
+		return beginSelPrice;
+	}
+	public void setBeginSelPrice(int beginSelPrice) {
+		this.beginSelPrice = beginSelPrice;
+	}
+	public int getEndSelPrice() {
+		return endSelPrice;
+	}
+	public void setEndSelPrice(int endSelPrice) {
+		this.endSelPrice = endSelPrice;
+	}
+	public String getBeginDatepicker() {
+		return beginDatepicker;
+	}
+	public void setBeginDatepicker(String beginDatepicker) {
+		this.beginDatepicker = beginDatepicker;
+	}
+	public String getEndDatepicker() {
+		return endDatepicker;
+	}
+	public void setEndDatepicker(String endDatepicker) {
+		this.endDatepicker = endDatepicker;
+	}
+	public String getBtnDatSech() {
+		return btnDatSech;
+	}
+	public void setBtnDatSech(String btnDatSech) {
+		this.btnDatSech = btnDatSech;
+	}
+	public String getSelectedTopCatgrNme() {
+		return selectedTopCatgrNme;
+	}
+	public void setSelectedTopCatgrNme(String selectedTopCatgrNme) {
+		this.selectedTopCatgrNme = selectedTopCatgrNme;
+	}
+	public String getSelectedMidCatgrNme() {
+		return selectedMidCatgrNme;
+	}
+	public void setSelectedMidCatgrNme(String selectedMidCatgrNme) {
+		this.selectedMidCatgrNme = selectedMidCatgrNme;
+	}
+	public String getSelectedBotCatgrNme() {
+		return selectedBotCatgrNme;
+	}
+	public void setSelectedBotCatgrNme(String selectedBotCatgrNme) {
+		this.selectedBotCatgrNme = selectedBotCatgrNme;
+	}
+	public String getCatgrSize() {
+		return catgrSize;
+	}
+	public void setCatgrSize(String catgrSize) {
+		this.catgrSize = catgrSize;
+	}
+	public int getQunt() {
+		return qunt;
+	}
+	public void setQunt(int qunt) {
+		this.qunt = qunt;
+	}
+	public int getInstckPric() {
+		return instckPric;
+	}
+	public void setInstckPric(int instckPric) {
+		this.instckPric = instckPric;
+	}
+	public int getSelPric() {
+		return selPric;
+	}
+	public void setSelPric(int selPric) {
+		this.selPric = selPric;
+	}
+	public String getProdctNme() {
+		return prodctNme;
+	}
+	public void setProdctNme(String prodctNme) {
+		this.prodctNme = prodctNme;
+	}
+	public Long getProdctSeq() {
+		return prodctSeq;
+	}
+	public void setProdctSeq(Long prodctSeq) {
+		this.prodctSeq = prodctSeq;
+	}
+	
+	
+}

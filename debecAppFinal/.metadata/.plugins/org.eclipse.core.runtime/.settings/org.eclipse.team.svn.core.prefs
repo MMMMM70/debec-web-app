@@ -1,0 +1,8 @@
+eclipse.preferences.version=1
+externalMigrateFromAuthorizationDatabase/isMigrated=true
+migrateFromAuthorizationDatabase/isMigrated=true
+repositories/10a7e99ac08400161f28a06a5423aa64=10a7e99ac08400161f28a06a5423aa64;https\://sebm.iptime.org\:8443/svn/debecAppTest;https\://sebm.iptime.org\:8443/svn/debecAppTest;branches;tags;trunk;true;e8939434-a851-4441-9b95-4416eead2cc3;https\://sebm.iptime.org\:8443/svn/debecAppTest;;false;;;0
+repositories/204eab5eee7e001619c283a087a4f429=204eab5eee7e001619c283a087a4f429;https\://sebm.iptime.org\:8443/svn/projectDebecApp;https\://sebm.iptime.org\:8443/svn/projectDebecApp;branches;tags;trunk;true;1c9413c0-4f49-534c-ab18-a70d2da0fc41;https\://sebm.iptime.org\:8443/svn/projectDebecApp;;false;;;0
+repositories/906dca62558800161397bf0b5e91e4f0=906dca62558800161397bf0b5e91e4f0;https\://sebm.iptime.org\:8443/svn/debecAppFinal;https\://sebm.iptime.org\:8443/svn/debecAppFinal;branches;tags;trunk;true;2019e671-5ae2-8f47-8746-b455ba1c4b2e;https\://sebm.iptime.org\:8443/svn/debecAppFinal;;false;;;0
+repositories/d00c47260c8a001617cba460a492787f=d00c47260c8a001617cba460a492787f;https\://sebm.iptime.org\:8443/svn/appDebec;https\://sebm.iptime.org\:8443/svn/appDebec;branches;tags;trunk;true;c5960dd1-347b-3149-a772-f3f6b38ff641;https\://sebm.iptime.org\:8443/svn/appDebec;;false;<https\://sebm.iptime.org\:8443> VisualSVN Server;;0
+repositories/e02fac59b17800161e08c35cf1329d0a=e02fac59b17800161e08c35cf1329d0a;https\://sebm.iptime.org\:8443/svn/debecApp/CordovaLib;https\://sebm.iptime.org\:8443/svn/debecApp/CordovaLib;branches;tags;trunk;true;0a7e086d-3402-6f46-8b08-c3b3943edd10;https\://sebm.iptime.org\:8443/svn/debecApp;;false;;;0

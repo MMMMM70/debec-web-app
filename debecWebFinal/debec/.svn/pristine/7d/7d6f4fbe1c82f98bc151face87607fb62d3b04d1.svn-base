@@ -1,0 +1,105 @@
+/**
+ * 
+ */
+//푸시 수신자 전체 고객 리스트 조회 팝업
+function pushRecpnt(){
+	var popUrl = "pushNotfcatnRecpntAllPopup.do";
+	var popupName= "pushNotfcatnRecpntAllPopup";
+	var width = 1800;
+	var height = 700;
+	var leftPosition = (screen.width/2) - (width/2);
+		leftPosition += window.screenLeft;//듀얼 모니터일때
+	var topPosition = (screen.height/2) - (height/2);
+	
+	var win = window.open(popUrl, popupName, "left="+leftPosition+", top="+topPosition+", toolbar=no, location=no, directories=no, scrollbars=no, resizable=no, width="+width+", height="+height);
+	
+	document.pushDespRecrdFrm.target = popupName;
+	document.pushDespRecrdFrm.action=popUrl;
+	document.pushDespRecrdFrm.submit();
+}
+//푸시 수신자 상품 팝업
+function pushRecpntProdctPopup(){
+	alert("테스트");
+	document.pushDespRecrdFrm.action="/pushNotfcatnRecpntProdctPopup.do";
+	document.pushDespRecrdFrm.submit();
+}
+//푸시 카테고리 리스트 조화
+function pushRecpntCatgrPopup(){
+	document.pushDespRecrdFrm.action="/pushRecpntCatgrPopup.do";
+	document.pushDespRecrdFrm.submit();
+}
+//푸시 상품선택 고객 조회
+function prodctChoc(prodctSeq) {
+	document.getElementById("prodctSeq").value = prodctSeq;
+	var formData = $("#pushRecpntProdctFrm").serialize();
+	$.ajax({
+      type: "POST",
+      url: "/pushRecpntProdctCustmr.do",
+      data: formData,
+      success: function(data){//이페이지에서 중복체크를 한다
+    	var pushRecpntProdctCustmrList = data["pushRecpntProdctCustmr"];
+    	var pushVoRecpntProdctCustmr = data["pushVoRecpntProdctCustmr"];
+
+    	document.getElementById('pushRecpntProdctCustmrList').innerHTML = pushRecpntProdctCustmrList;
+    	document.getElementById('pushVoRecpntProdctCustmr').innerHTML = pushVoRecpntProdctCustmr;   
+      },
+       error:function(xhr,status,error)
+       { 
+          alert("error\nxhr : " + xhr + ", status : " + status + ", error : " + error);       
+       }
+  });
+}
+//푸시 패키지 리스트 조화
+function pushRecpntPackgPopup(){
+	document.pushDespRecrdFrm.action="/pushRecpntPackgPopup.do";
+	document.pushDespRecrdFrm.submit();
+}
+//푸시 패키지 신청 고객
+function pushRecpntPackgAplctnCustmrChoc(packgSeq) {
+	document.getElementById("packgSeq").value = packgSeq;
+	var formData = $("#pushRecpntPackgFrm").serialize();
+	$.ajax({
+      type: "POST",
+      url: "/pushRecpntPackgAplctnCustmr.do",
+      data: formData,
+      success: function(data){//이페이지에서 중복체크를 한다
+		var pushRecpntPackgCustmr = data["pushRecpntPackgCustmr"];
+		var pushRecpntPackgPushVo = data["pushRecpntPackgPushVo"];
+
+		document.getElementById('pushRecpntPackgCustmr').innerHTML = pushRecpntPackgCustmr;
+    	document.getElementById('pushRecpntPackgPushVo').innerHTML = pushRecpntPackgPushVo;
+      },
+      error:function(xhr,status,error)
+      { 
+         alert("error\nxhr : " + xhr + ", status : " + status + ", error : " + error);       
+      }
+  });
+}
+
+//푸시 공용 구매 리스트 조화
+function pushRecpntGropPurchsPopup(){
+	document.pushDespRecrdFrm.action="/pushRecpntGropPurchsPopup.do";
+	document.pushDespRecrdFrm.submit();
+}
+//푸시 공용구매 신청 고객
+function pushRecpntGropPurchsAplctnCustmr(gropPurchsSeq) {
+	alert("값뜨는지 확인"+gropPurchsSeq);
+  	document.getElementById("gropPurchsSeq").value = gropPurchsSeq;
+  	var formData = $("#pushRecpntGropPurchsFrm").serialize();
+  	$.ajax({
+    type: "POST",
+    url: "/pushRecpntGropPurchsAplctnCustmr.do",
+    data: formData,
+    success: function(data){//이페이지에서 중복체크를 한다
+    	var pushRecpntGropPurchsAplctnCustmr = data["pushRecpntGropPurchsAplctnCustmr"];
+		var pushRecpntGropPurchsAplctnCustmrVo = data["pushRecpntGropPurchsAplctnCustmrVo"];
+
+		document.getElementById('pushRecpntGropPurchsAplctnCustmr').innerHTML = pushRecpntGropPurchsAplctnCustmr;
+		document.getElementById('pushRecpntGropPurchsAplctnCustmrVo').innerHTML = pushRecpntGropPurchsAplctnCustmrVo;
+      },
+       error:function(xhr,status,error)
+       { 
+          alert("error\nxhr : " + xhr + ", status : " + status + ", error : " + error);       
+       }
+  });
+}

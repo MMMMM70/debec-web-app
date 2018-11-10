@@ -1,0 +1,60 @@
+<div data-role="page" id="dahamgaePage" style="background-color:#F3F3F3">
+	<nd2-include data-src="MainEmpPanelLeft.html"></nd2-include>
+	<nd2-include data-src="MainEmpPanelRight.html"></nd2-include>
+	<!-- Header 시작 -->
+	<div data-role="header" data-position="fixed">
+		<a href="#empLeftPanel" class="ui-btn ui-btn-left" ><i class="zmdi zmdi-dehaze zmd-fw"></i></a>
+		<h1 class="font-lg font-center" onclick="$.mobile.changePage('MainCusFrame.html')">DEBEC</h1>		
+		<a href="#empRightPanel" class="ui-btn ui-btn-right" ><i class="zmdi zmdi-apps zmd-fw"></i></a>
+		<div>
+			<nd2-include data-src="MarketSearchMarket.html"/>
+		</div>
+		<div data-position="fixed" data-tap-toggle="false">
+			<nd2-include data-src="MarketNavBarMarket.html"/>
+		</div>
+	</div>
+	<!-- Header 끝 -->		
+	<!-- content 시작 -->
+	<div class="row" data-inset="false">
+		<div>
+			<img src="../img/dahamgae.jpg" style="width:100%;"/>
+		</div>
+	</div>
+	<div data-role="content" class="ui-content" data-inset="false">
+		<ul data-role="listview">
+			<li style="padding-top: 0px; padding-bottom: 10px;">
+				<hr style="margin-top: 0px;">
+				<div style="position: relative; padding-left: 10px; padding-right: 10px; height: 200px;">
+					<a href="MarketDahamgaeRead.html" align="center" style="width: 100%">
+						<div style="display: table-cell; height: 140px; vertical-align: top;" align="center">
+							<img src="../img/dahamgae_1.jpg" style="width:80%; height:100%"/>
+						</div>
+					</a>
+		            <div class="col-xs-6" style="display: table-cell; padding: 4px 0px 0  15px; vertical-align: top;">
+		            	<a href="MarketDahamgaeRead.html" style="color: #636566; text-decoration: none;">
+							<div style="white-space:normal; display: -webkit-box; overflow: hidden; width: 240px;height: 20px; padding-right: 15px; line-height: 20px; color: #666; -webkit-line-clamp: 2; -webkit-box-orient: vertical; word-break: break-all; word-wrap: break-word;">
+								<span>함께 구매하면 혜자스러운 카카오!</span>
+							</div>
+							<div style="margin: 0 0 -4px; line-height: 27px; color: #262f33;">
+								<em class="font-xlg" style="font-style: normal; font-family: 'emm_bol'; font-weight: bold; letter-spacing: -1px; color: #262f33;">7,000원</em>
+							</div> 
+		               </a>
+		            </div>
+		            <div style="position: absolute; top: 170px; right: 10px;">
+						<span style="padding: 0; width: 53px; height: 53px; background-position: 0 -400px;">
+							참여인원 <span class="font-lg" style="color:red"><strong>80명</strong></span>
+						</span>
+		            </div>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<!-- content 끝 -->
+	<!-- Footer 시작 -->
+	<!-- data-tap-toggle="false"를 해서 토글 기능을 제거합니다. -->
+	<div data-role="footer" data-position="fixed" data-tap-toggle="false">
+		<!-- 하단 툴바 메뉴를 HTML로 바인딩합니다. -->
+		<nd2-include data-src="../main/Bottom.html"></nd2-include>
+	</div>	
+	<!-- Footer 끝 -->
+</div>

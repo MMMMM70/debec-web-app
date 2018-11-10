@@ -1,0 +1,31 @@
+package net.su.app.appRecp.service;
+
+import java.util.List;
+
+import javax.servlet.http.HttpSession;
+
+import net.su.app.appRecp.valueObject.AppRecpValueObject;
+import net.su.logger.Logger;
+import net.su.prodct.valueObject.ProdctValueObject;
+
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
+
+public interface AppRecpService {
+	//AppRecpServiceImpl
+	public List<AppRecpValueObject> recpList(AppRecpValueObject appRecpValueObject) throws Exception;
+	public void recpLikeProcessing(AppRecpValueObject appRecpValueObject) throws Exception;
+	public AppRecpValueObject recpRead(AppRecpValueObject appRecpValueObject) throws Exception;
+	public List<AppRecpValueObject> recpReplyList(AppRecpValueObject appRecpValueObject) throws Exception;
+	public List<AppRecpValueObject> recpProdctList(AppRecpValueObject appRecpValueObject) throws Exception;
+	public void recpReplyInsert(AppRecpValueObject appRecpValueObject) throws Exception;
+	public List<AppRecpValueObject> appRecpProdctSearch(String recpSechText) throws Exception;
+	public List<AppRecpValueObject> appRecpProdctList(long[] recpProdct) throws Exception;
+	public String recpTempFileUpload(MultipartHttpServletRequest request, AppRecpValueObject appRecpValueObject) throws Exception;
+	public int appRecpInsert(AppRecpValueObject appRecpValueObject, long[] recpProdct)throws Exception;
+	public void appRecpDelete(AppRecpValueObject appRecpValueObject)throws Exception;
+	public void appRecpUpdate(AppRecpValueObject appRecpValueObject, long[] recpProdct)throws Exception;
+	public void appRecpProdctCartInsert(int memSeq, long[] prodctSeqArray) throws Exception;
+
+}
