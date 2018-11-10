@@ -9,13 +9,6 @@ import net.su.prodct.valueObject.ProdctValueObject;
 import org.mybatis.spring.support.SqlSessionDaoSupport;
 import org.springframework.stereotype.Repository;
 
-/**
- * 앱 마켓 메뉴 대백제 기능 DAO입니다.
- * 
- * @see   net.su.app.appMarket.dataAccessObject
- * @version  1.0 
- * @ author 이인호, 2016/09/20
- */
 
 @Repository
 public class AppDebecFestivalDataAccessObject extends SqlSessionDaoSupport{

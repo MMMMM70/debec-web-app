@@ -11,14 +11,6 @@ import org.mybatis.spring.support.SqlSessionDaoSupport;
 import org.springframework.stereotype.Repository;
 
 
-/**
- * 앱 마켓 메뉴 관련 공통 기능 DAO입니다.
- * 
- * @see   net.su.app.appMarket.dataAccessObject
- * @version  1.0 
- * @ author 이인호, 2016/09/20
- */
-
 @Repository
 public class AppMarketDataAccessObject extends SqlSessionDaoSupport{
 	

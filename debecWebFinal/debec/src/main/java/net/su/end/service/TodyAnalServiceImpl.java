@@ -13,13 +13,6 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
-/**
- * 투데이리포트 서비스임플입니다.
- * 
- * @see   net.su.end.service.TodyAnalServiceImpl
- * @version  1.0 
- * @ author 김대현, 2016/08/24
- */
 @Service
 public class TodyAnalServiceImpl implements TodyAnalService{
 

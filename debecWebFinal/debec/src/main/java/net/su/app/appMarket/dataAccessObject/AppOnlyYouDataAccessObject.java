@@ -9,13 +9,7 @@ import org.mybatis.spring.support.SqlSessionDaoSupport;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.RequestParam;
 
-/**
- * 앱 마켓 메뉴 너.만.상 기능 DAO입니다.
- * 
- * @see   net.su.app.appMarket.controller
- * @version  1.0 
- * @ author 이인호, 2016/09/22
- */
+
 @Repository
 public class AppOnlyYouDataAccessObject extends SqlSessionDaoSupport{
 	

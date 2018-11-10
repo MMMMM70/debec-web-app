@@ -18,13 +18,6 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
-/**
- * 직원관리 메뉴 관련 서비스 인터페이스입니다.
- * 
- * @see   net.su.market.service.EmpServiceImpl
- * @version  1.0 
- * @ author 이인호, 2016/08/09
- */
 
 @Service
 public class EmpServiceImpl implements EmpService {

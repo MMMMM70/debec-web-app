@@ -14,13 +14,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.codehaus.jackson.map.ObjectMapper;
 //import com.fasterxml.jackson.databind.ObjectMapper;
 
-/**
- * 일정관리 메뉴 관련 컨트롤러입니다.
- * 
- * @see   net.su.market.controller.SchedlController
- * @version  1.0 
- * @ author 최재욱, 2016/08/15
- */
 @Controller
 public class SchedlController {
 

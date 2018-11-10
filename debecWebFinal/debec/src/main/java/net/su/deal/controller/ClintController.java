@@ -25,13 +25,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-/**
- * 거래처관리 컨트롤러입니다.
- * 
- * @see   net.su.deal.controller.ClintController
- * @version  1.0 
- * @ author 김대현, 2016/08/09
- */
 
 @Controller
 public class ClintController {

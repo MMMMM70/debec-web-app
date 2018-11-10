@@ -15,13 +15,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
-/**
- * 주문관리 관련 컨트롤러입니다.
- * 
- * @see   net.su.custmr.controller.CustmrController
- * @version  1.0 
- * @ author 최재욱, 2016/08/09
- */
+
 @Controller
 public class OrdrController {
 

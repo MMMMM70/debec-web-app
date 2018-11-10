@@ -11,13 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 //import com.fasterxml.jackson.databind.ObjectMapper;
 
-/**
- * 이용약관 관리 관련 컨트롤러입니다.
- * 
- * @see   net.su.market.controller.AgremtController
- * @version  1.0 
- * @ author 최재욱, 2016/08/15
- */
 @Controller
 public class AgremtController {
 

@@ -10,13 +10,6 @@ import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-/**
- * 앱 마켓 메뉴 다함께 기능 DAO입니다.
- * 
- * @see   net.su.app.appMarket.dataAccessObject
- * @version  1.0 
- * @ author 시상일, 2016/10/06
- */
 
 @Repository
 public class AppTogthrDataAccessObject extends SqlSessionDaoSupport{

@@ -15,13 +15,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-/**
- * 주문분석 관련 컨트롤러입니다.
- * 
- * @see   net.su.end.controller.OrdrAnalController
- * @version  1.0 
- * @ author 시상일, 2016/08/25
- */
 @Controller
 public class OrdrAnalController {
 

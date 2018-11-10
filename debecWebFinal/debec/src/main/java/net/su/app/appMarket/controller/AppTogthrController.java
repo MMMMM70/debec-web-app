@@ -17,13 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-/**
- * 앱 마켓 다함께 관련 컨트롤러입니다.
- * 
- * @see   net.su.app.appMarket.controller.AppTogthrController
- * @version  1.0 
- * @ author 시상일, 2016/09/30
- */
+
 @Controller
 public class AppTogthrController {
 	@Resource

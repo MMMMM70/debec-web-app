@@ -18,14 +18,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
-/**
- * 직원관리 메뉴 관련 컨트롤러입니다.
- * 
- * @see   net.su.market.controller.EmpController
- * @version  1.0 
- * @ author 이인호, 2016/08/09
- */
-
 @Controller
 public class EmpController {
 	

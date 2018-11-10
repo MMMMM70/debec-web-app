@@ -11,13 +11,6 @@ import net.su.prodct.valueObject.ProdctValueObject;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
 
-/**
- * 앱 마켓 메뉴 너.만.상 기능 서비스 인터페이스입니다.
- * 
- * @see   net.su.app.appMarket.controller
- * @version  1.0 
- * @ author 이인호, 2016/09/22
- */
 @Service
 public class AppOnlyYouServiceImpl implements AppOnlyYouService {
 	

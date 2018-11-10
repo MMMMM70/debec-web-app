@@ -10,13 +10,6 @@ import net.su.prodct.display.valueObject.PackgValueObject;
 
 import java.util.List;
 
-/**
- * 앱 마켓 메뉴 대백초이스 기능 DAO입니다.
- * 
- * @see   net.su.app.appMarket.dataAccessObject
- * @version  1.0 
- * @ author 시상일, 2016/10/03
- */
 
 @Repository
 public class AppDebecChoiceDataAccessObject extends SqlSessionDaoSupport{

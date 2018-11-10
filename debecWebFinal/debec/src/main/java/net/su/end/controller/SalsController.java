@@ -14,13 +14,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-/**
- * 매출분석 관련 컨트롤러입니다.
- * 
- * @see   net.su.end.controller.SalsController
- * @version  1.0 
- * @ author 최재욱, 2016/08/21
- */
 @Controller
 public class SalsController {
 

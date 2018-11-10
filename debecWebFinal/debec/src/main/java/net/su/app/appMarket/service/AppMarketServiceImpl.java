@@ -13,14 +13,6 @@ import net.su.prodct.valueObject.ProdctValueObject;
 import org.springframework.stereotype.Service;
 
 
-/**
- * 앱 마켓 메뉴 관련 공통 기능 서비스 인터페이스입니다.
- * 
- * @see   net.su.app.appMarket.service
- * @version  1.0 
- * @ author 이인호, 2016/09/20
- */
-
 @Service
 public class AppMarketServiceImpl implements AppMarketService{
 

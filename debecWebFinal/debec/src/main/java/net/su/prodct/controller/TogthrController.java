@@ -26,14 +26,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-/**
- * 핫딜 상품 메뉴 관련 컨트롤러입니다.
- * 
- * @see   net.su.prodct.display.controller.HotdlController
- * @version  1.0 
- * @ author 이정호, 2016/09/02
- */
-
 @Controller
 public class TogthrController {
 	

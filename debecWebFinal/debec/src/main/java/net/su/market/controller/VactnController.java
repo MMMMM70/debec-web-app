@@ -18,14 +18,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-/**
- * 휴가관리 메뉴 관련 컨트롤러입니다.
- * 
- * @see   net.su.market.controller.VactnController
- * @version  1.0 
- * @ author 이인호, 2016/08/16
- */
-
 @Controller
 public class VactnController {
 	

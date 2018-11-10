@@ -19,13 +19,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-/**
- * 앱 마켓 대백초이스 관련 컨트롤러입니다.
- * 
- * @see   net.su.app.appMarket.controller.AppDebecChoiceController
- * @version  1.0 
- * @ author 시상일, 2016/09/19
- */
 @Controller
 public class AppDebecChoiceController {
 	@Resource

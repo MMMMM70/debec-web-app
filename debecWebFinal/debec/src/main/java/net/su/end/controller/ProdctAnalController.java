@@ -17,14 +17,6 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-/**
- * 상품분석 관련 컨트롤러입니다.
- * 
- * @see   net.su.end.controller.ProdctAnalController
- * @version  1.0 
- * @ author 김대현, 2016/09/07
- */
-
 @Controller
 public class ProdctAnalController {
 

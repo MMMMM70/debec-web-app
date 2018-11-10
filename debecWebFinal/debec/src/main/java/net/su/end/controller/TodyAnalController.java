@@ -13,13 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
-/**
- * 투데이리포트 컨트롤러입니다.
- * 
- * @see   net.su.end.controller.TodyAnalController
- * @version  1.0 
- * @ author 김대현, 2016/08/24
- */
 @Controller
 public class TodyAnalController {
 	@Resource 

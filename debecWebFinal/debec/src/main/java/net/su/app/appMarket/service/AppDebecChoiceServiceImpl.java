@@ -13,14 +13,6 @@ import net.su.prodct.display.valueObject.HotdlValueObject;
 import net.su.prodct.display.valueObject.PackgValueObject;
 
 
-/**
- * 앱 마켓 대백초이스 관련 인터페이스입니다.
- * 
- * @see   net.su.app.appMarket.service
- * @version  1.0 
- * @ author 시상일, 2016/10/03
- */
-
 @Service
 public class AppDebecChoiceServiceImpl  implements AppDebecChoiceService{
 

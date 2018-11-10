@@ -15,14 +15,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
-/**
- * 입고거래장관리 컨트롤러입니다.
- * 
- * @see   net.su.deal.controller.ClintController
- * @version  1.0 
- * @ author 김대현, 2016/08/14
- */
-
 
 @Controller
 public class InstckController {
