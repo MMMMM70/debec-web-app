@@ -34,6 +34,7 @@
   - 하이브리드 앱 개발 경험
   - Ajax 비동기 통신에 대한 이해
   - 애자일 프로세스 차용
+  <br>
 * <b>개발 주요 화면<b> <br><br>
   ![main_screen](https://user-images.githubusercontent.com/23471262/48778259-07c2b900-ed18-11e8-95e3-c7962e36da92.JPG)
  
