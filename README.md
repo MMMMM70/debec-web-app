@@ -35,7 +35,7 @@
   - Ajax 비동기 통신에 대한 이해
   - 애자일 프로세스 차용
 * <b>개발 주요 화면<b> <br>
-  ![main screen](./main_screen.jpg)
+  ![main_screen](https://user-images.githubusercontent.com/23471262/48778259-07c2b900-ed18-11e8-95e3-c7962e36da92.JPG)
  
 
   
