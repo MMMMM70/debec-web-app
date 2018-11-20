@@ -26,4 +26,13 @@
   - [푸시알림](https://github.com/MMMMM70/debec-web-app/tree/master/debecWebFinal/debec/src/main/java/net/su/app/appPush)
   - [마이페이지](https://github.com/MMMMM70/debec-web-app/tree/master/debecWebFinal/debec/src/main/java/net/su/app/appMyPg)
   - [랜덤박스, 레시피, 담소방](https://github.com/MMMMM70/debec-web-app/tree/master/debecWebFinal/debec/src/main/java/net/su/app/appRecp)
+* <b>본인이 공헌한 점</b> : 컨텐츠 기획, 반응형 웹 레아이웃 설계, 역동적인 메인페이지 개발, 앱 개발
+* <b>결과 및 성과</b>
+  - 체계적인 기획, 분석, 설계, 개발, 운영 프로세스 경험
+  - Front-End 기술 습득
+  - 하이브리드 앱 개발 경험
+  - Ajax 비동기 통신에 대한 이해
+  - 애자일 프로세스 차용
+ 
+
   
