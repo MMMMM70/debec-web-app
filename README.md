@@ -34,6 +34,8 @@
   - 하이브리드 앱 개발 경험
   - Ajax 비동기 통신에 대한 이해
   - 애자일 프로세스 차용
+* <b>개발 주요 화면<b> <br>
+  [](https://github.com/MMMMM70/debec-web-app/개발 주요 화면.jpg)
  
 
   
